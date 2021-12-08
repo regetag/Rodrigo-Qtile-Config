@@ -21,7 +21,6 @@ from libqtile.config import Key, Match, Group
 # Local Files
 from widgets import MyWidgets
 from layouts import Layouts
-from icons import group_icons   
 from libqtile.command import lazy
 
  
@@ -122,7 +121,6 @@ keys = [
 
     Key([mod, "shift"], "Return", lazy.spawn('pcmanfm')),
     Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#191919' -nf '#ff3b3b' -sb '#ff3b3b' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
-#    Key([mod, "shift"], "d", lazy.spawn(home + '/.config/qtile/scripts/dmenu.sh')),
     Key([mod, "shift"], "q", lazy.window.kill()),
     Key([mod, "shift"], "r", lazy.restart()),
     Key([mod, "control"], "r", lazy.restart()),

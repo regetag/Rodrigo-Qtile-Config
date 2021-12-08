@@ -35,7 +35,7 @@ class MyWidgets:
                        ["#f1ffff", "#f1ffff"],
                        ["#4c566a", "#4c566a"], ]
 
-        self.termite = "termite"
+        self.termite = "alacritty"
 
     def init_widgets_list(self):
         '''
@@ -47,11 +47,6 @@ class MyWidgets:
                 padding=6,
                 foreground=self.colors[2],
                 background=self.colors[0]
-            ),
-            widget.Image(
-                filename="~/.config/qtile/icons/terminal-iconx14.png",
-                mouse_callbacks={
-                    'Button1': lambda qtile: qtile.cmd_spawn('dmenu_run -p "Run: "')}
             ),
             widget.Sep(
                 linewidth=0,
@@ -82,7 +77,7 @@ class MyWidgets:
                 other_screen_border=self.colors[0],
                 foreground=self.colors[2],
                 background=self.colors[0],
-                disable_drag=True
+                disable_drag=False
             ),
             widget.Prompt(
                 prompt=lazy.spawncmd(),
@@ -102,10 +97,7 @@ class MyWidgets:
                 background=self.colors[0],
                 padding=0
             ),
-            widget.Systray(
-                background=self.colors[0],
-                padding=5
-            ),
+            
             widget.TextBox(
                 text='',
                 background=self.colors[0],
@@ -113,8 +105,17 @@ class MyWidgets:
                 padding=0,
                 fontsize=37
             ),
+            widget.CPU(
+                font="Ubuntu Mono",
+                format = '{freq_current}GHz {load_percent}%',
+                update_interval = 1,
+                fontsize = 12,
+                foreground=self.colors[7],
+                background=self.colors[11],
+                #mouse_callbacks = {'Button1': lambda qtile: qtile.cmd_spawn('alacritty -e htop')},
+            ),
             widget.TextBox(
-                text=" 🖬",
+                text=" |",
                 foreground=self.colors[7],
                 background=self.colors[11],
                 padding=0,
@@ -123,8 +124,8 @@ class MyWidgets:
             widget.Memory(
                 foreground=self.colors[7],
                 background=self.colors[11],
-                mouse_callbacks={'Button1': lambda qtile: qtile.cmd_spawn(
-                    self.termite + ' -e htop')},
+                # mouse_callbacks={'Button1': lambda qtile: qtile.cmd_spawn(
+                #     self.termite + ' -e htop')},
                 padding=5
             ),
             widget.TextBox(
@@ -139,8 +140,8 @@ class MyWidgets:
                 foreground=self.colors[7],
                 background=self.colors[10],
                 padding=0,
-                mouse_callbacks={
-                    "Button1": lambda qtile: qtile.cmd_spawn("pavucontrol")}
+                # mouse_callbacks={
+                #     "Button1": lambda qtile: qtile.cmd_spawn("pavucontrol")}
             ),
             widget.Volume(
                 foreground=self.colors[7],
@@ -177,8 +178,8 @@ class MyWidgets:
             widget.Clock(
                 foreground=self.colors[7],
                 background=self.colors[8],
-                mouse_callbacks={
-                    "Button1": lambda qtile: qtile.cmd_spawn(PWA.calendar())},
+                # mouse_callbacks={
+                #     "Button1": lambda qtile: qtile.cmd_spawn(PWA.calendar())},
                 format="%B %d  [ %H:%M ]"
             ),
             widget.Sep(
@@ -186,6 +187,15 @@ class MyWidgets:
                 padding=10,
                 foreground=self.colors[0],
                 background=self.colors[8]
+            ),
+            widget.BatteryIcon(
+                background=self.colors[8],
+                theme_path="/home/uwu/.config/qtile/icons/battery-icons",
+                update_interval=1
+            ),
+            widget.Systray(
+                background=self.colors[8],
+                padding=5
             ),
         ]
         return widgets_list
@@ -204,6 +214,7 @@ class MyWidgets:
         It can be modified so it is useful if you  have a multimonitor system
         '''
         widgets_screen2 = self.init_widgets_screen()
+        widgets_screen2.pop()
         return widgets_screen2
 
     def init_screen(self):

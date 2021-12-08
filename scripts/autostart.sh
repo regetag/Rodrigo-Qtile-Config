@@ -24,4 +24,4 @@ numlockx on &
 blueman-applet &
 run volumeicon &
 picom --config .config/picom/picom-blur.conf --experimental-backends &
-run nitrogen --restore &
+bash $HOME/.config/qtile/scripts/configMonitors.sh &
