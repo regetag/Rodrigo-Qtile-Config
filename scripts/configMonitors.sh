@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#   Copyright (c) 2021 Rodrigo Tavares
+#   http://www.github.com/regetag/
 TOTAL_OF_MONITORS=1
 nitrogen --restore
 

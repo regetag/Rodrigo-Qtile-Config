@@ -15,7 +15,8 @@ from functions import PWA
 
 
 class MyWidgets:
-    def __init__(self):
+    def __init__(self, home):
+        self.home = home
         self.colors = [["#292d3e", "#292d3e"],  # panel background
                        # background for current screen tab
                        ["#434758", "#434758"],
@@ -28,7 +29,7 @@ class MyWidgets:
                        ["#e1acff", "#e1acff"],  # window name
 
                        ["#000000", "#000000"],
-                       ["#AD343E", "#AD343E"],
+                       ["#AD343E", "#AD343E"], #8
                        ["#f76e5c", "#f76e5c"],
                        ["#F39C12", "#F39C12"],
                        ["#F7DC6F", "#F7DC6F"],
@@ -88,16 +89,28 @@ class MyWidgets:
             ),
             widget.Sep(
                 linewidth=0,
-                padding=40,
+                padding=10,
                 foreground=self.colors[2],
                 background=self.colors[0]
             ),
-            widget.WindowName(
-                foreground=self.colors[6],
+            widget.TaskList(
+                highlight_method = 'block', # or block
+                icon_size=17,
+                max_title_width=100,
+                rounded=True,
+                padding=4,
+                margin_y=0,
+                fontsize=14,
+                border= self.colors[8],
+                foreground=self.colors[2],
+                margin=2,
+                txt_floating='🗗',
+                txt_minimized='>_ ',
+                borderwidth = 2,
                 background=self.colors[0],
-                padding=0
+                urgent_border=self.colors[3]
+                #unfocused_border = 'border'
             ),
-            
             widget.TextBox(
                 text='',
                 background=self.colors[0],
@@ -176,7 +189,7 @@ class MyWidgets:
                 fontsize=37
             ),
             widget.Clock(
-                foreground=self.colors[7],
+                foreground=self.colors[2],
                 background=self.colors[8],
                 # mouse_callbacks={
                 #     "Button1": lambda qtile: qtile.cmd_spawn(PWA.calendar())},
@@ -184,13 +197,13 @@ class MyWidgets:
             ),
             widget.Sep(
                 linewidth=0,
-                padding=10,
+                padding=5,
                 foreground=self.colors[0],
                 background=self.colors[8]
             ),
             widget.BatteryIcon(
                 background=self.colors[8],
-                theme_path="/home/uwu/.config/qtile/icons/battery-icons",
+                theme_path=self.home + "/.config/qtile/icons/battery-icons",
                 update_interval=1
             ),
             widget.Systray(

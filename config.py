@@ -6,6 +6,8 @@
 # | | | || | | |
 # | |_| || |_| |  http://www.github.com/Daniel1404/
 # |____/ |____/
+#                 Copyright (c) 2021 Rodrigo Tavares
+#                 http://www.github.com/regetag/
 #
 
 
@@ -24,6 +26,7 @@ from layouts import Layouts
 from keyBinds import set_key_binds
 from workSpaces import set_workspaces
 
+home = os.path.expanduser('~')
  
 ###### MAIN ######
 if __name__ in ["config", "__main__"]:
@@ -32,7 +35,7 @@ if __name__ in ["config", "__main__"]:
     # Initializes keybindings
 
     # Mouse
-    obj_widgets       = MyWidgets()
+    obj_widgets       = MyWidgets(home)
     obj_layouts       = Layouts()
     
     # Initializes qtile variables
@@ -85,7 +88,7 @@ wmname = "LG3D"
 
 @hook.subscribe.startup_once
 def start_once():
-    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/scripts/autostart.sh'])
     subprocess.call([home + '/.local/bin/autostart'])
 
 @hook.subscribe.client_new
@@ -93,15 +96,10 @@ def dialogs(window):
     if(window.window.get_wm_type() == 'dialog' or window.window.get_wm_transient_for()):
         window.floating = True
 
-@hook.subscribe.startup_once
-def start_once():
-    home = os.path.expanduser('~')
-    subprocess.call([home + '/.config/qtile/scripts/autostart.sh'])
 
 mod = "mod4"
 mod1 = "alt"
 mod2 = "control"
-home = os.path.expanduser('~')
 
 keys = set_key_binds(home, mod, mod1, mod2)
 
