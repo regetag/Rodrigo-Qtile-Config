@@ -16,7 +16,7 @@ import subprocess
 # from typing import List  # noqa: F401
 
 from libqtile import hook, layout
-from libqtile.config import Key, Group, Match
+from libqtile.config import Match
 
 # Local Files
 from widgets import MyWidgets
