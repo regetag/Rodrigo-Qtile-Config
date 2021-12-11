@@ -23,5 +23,4 @@ lxsession &
 numlockx on &
 blueman-applet &
 run volumeicon &
-picom --config .config/picom/picom-blur.conf --experimental-backends &
-bash $HOME/.config/qtile/scripts/configMonitors.sh &
+picom --config .config/picom/picom-blur.conf --experimental-backends & # Garuda blur script
