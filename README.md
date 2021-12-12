@@ -1,12 +1,6 @@
 # Qtile configuration file
 
-## Screenshots 🖥️
-
-![Qtile Screenshots](../assets/Remake-1.png)
-
-![Qtile Screenshots](../assets/Remake-2.png)
-
-![Qtile Screenshots](../assets/REMAKE-3.png)
+Forked from [DaniDiazTech](https://github.com/DaniDiazTech/Qtile-Config)
 
 ## What is Qtile?
 
