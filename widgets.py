@@ -133,6 +133,7 @@ class MyWidgets:
             widget.Memory(
                 foreground=self.colors[7],
                 background=self.colors[11],
+                # format='{{}}-{MemTotal}',
                 # mouse_callbacks={'Button1': lambda qtile: qtile.cmd_spawn(
                 #     self.termite + ' -e htop')},
                 padding=5
@@ -230,9 +231,13 @@ class MyWidgets:
         '''
         Init the widgets in the screen
         '''
+        configs = {
+            "opacity": 1.0, 
+            "margin": [5, 10, 0, 10],
+            "size": 20, 
+        }
+
         return [
-            Screen(top=bar.Bar(widgets=self.init_widgets_screen(), opacity=1.0, size=20)),
-            Screen(top=bar.Bar(
-                widgets=self.init_widgets_screen2(), opacity=1.0, size=20)
-            )
+            Screen(top=bar.Bar(widgets=self.init_widgets_screen(), **configs)),
+            Screen(top=bar.Bar(widgets=self.init_widgets_screen2(), **configs))
         ]

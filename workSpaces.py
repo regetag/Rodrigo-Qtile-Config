@@ -6,7 +6,6 @@ def set_workspaces(keys, home, mod, mod1, mod2):
 
     # FOR QWERTY KEYBOARDS
     group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
-
     group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
     group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "treetab", "floating",]
 
