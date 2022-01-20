@@ -18,7 +18,7 @@ class MyWidgets:
     def __init__(self, home):
         self.home = home
         self.colors = [
-            ["#292d3e", "#292d3e"],  # panel background
+            ["#383838", "#383838"],  # panel background
             # background for current screen tab
             ["#434758", "#434758"],
             ["#ffffff", "#ffffff"],  # font color for group names
@@ -216,6 +216,16 @@ class MyWidgets:
         It can be modified so it is useful if you  have a multimonitor system
         '''
         widgets_screen = self.init_widgets_list()
+
+        widgets_screen.append(
+            widget.Sep(
+                    linewidth=0,
+                    padding=10,
+                    foreground=self.colors[2],
+                    background=self.colors[8]
+                ),
+        )
+
         return widgets_screen
 
     def init_widgets_screen2(self):
