@@ -15,30 +15,23 @@ def set_key_binds(home, mod, mod1, mod2):
         Key([mod], "Escape", lazy.spawn('xkill')),
         Key([mod], "Return", lazy.spawn('alacritty')),
         Key([mod], "KP_Enter", lazy.spawn('alacritty')),
-        Key([mod], "x", lazy.shutdown()),
+        Key([mod], "x", lazy.spawn("arcolinux-logout")),
 
     # SUPER + SHIFT KEYS
 
-        Key([mod, "shift"], "Return", lazy.spawn('pcmanfm')),
+        Key([mod, "shift"], "Return", lazy.spawn('thunar')),
         Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#191919' -nf '#ff3b3b' -sb '#ff3b3b' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
         Key([mod, "shift"], "q", lazy.window.kill()),
         Key([mod, "shift"], "r", lazy.restart()),
         Key([mod, "control"], "r", lazy.restart()),
-        Key([mod, "shift"], "x", lazy.shutdown()),
+        Key([mod, "shift"], "x", lazy.spawn("arcolinux-logout")),
+        
 
     # CONTROL + ALT KEYS
 
         Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/picom-toggle.sh')),
-        Key(["mod1", "control"], "t", lazy.spawn('xterm')),
-        Key(["mod1", "control"], "u", lazy.spawn('pavucontrol')),
 
     # ALT + ... KEYS
-
-
-        Key(["mod1"], "p", lazy.spawn('pamac-manager')),
-        Key(["mod1"], "f", lazy.spawn('firedragon')),
-        Key(["mod1"], "m", lazy.spawn('pcmanfm')),
-        Key(["mod1"], "w", lazy.spawn('garuda-welcome')),
 
 
     # CONTROL + SHIFT KEYS
@@ -46,13 +39,6 @@ def set_key_binds(home, mod, mod1, mod2):
         Key([mod2, "shift"], "Escape", lazy.spawn('lxtask')),
 
 
-    # SCREENSHOTS
-
-        Key([], "Print", lazy.spawn('flameshot full -p ' + home + '/Pictures')),
-        Key([mod2], "Print", lazy.spawn('flameshot full -p ' + home + '/Pictures')),
-    #    Key([mod2, "shift"], "Print", lazy.spawn('gnome-screenshot -i')),
-
-    # MULTIMEDIA KEYS
 
     # INCREASE/DECREASE BRIGHTNESS
         Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
