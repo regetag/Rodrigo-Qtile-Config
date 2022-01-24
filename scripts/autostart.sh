@@ -14,7 +14,7 @@ function run {
     fi
 }
 
-run variety &
+run nitrogen --restore &
 run nm-applet &
 run pamac-tray &
 run xfce4-power-manager &

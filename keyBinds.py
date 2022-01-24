@@ -125,6 +125,7 @@ def set_key_binds(home, mod, mod1, mod2):
         Key([mod, "shift"], "f", lazy.layout.flip()),
 
     # FLIP LAYOUT FOR BSP
+        Key([mod, "mod1"], "u", lazy.spawn("pavucontrol")),
         Key([mod, "mod1"], "k", lazy.layout.flip_up()),
         Key([mod, "mod1"], "j", lazy.layout.flip_down()),
         Key([mod, "mod1"], "l", lazy.layout.flip_right()),

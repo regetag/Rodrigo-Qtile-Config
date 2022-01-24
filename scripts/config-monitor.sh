@@ -1,4 +1,5 @@
-CONNECTED_MONITORS=$(xrandr | grep " connected" | wc -l)
+#!/usr/bin/env bash
+CONNECTED_MONITORS=1
 LAST_AMOUNT_CONNECTED=$CONNECTED_MONITORS
 
 
@@ -14,6 +15,7 @@ while [ true ]; do
             xrandr --output HDMI1 --auto --above LVDS1 --auto
         fi
 
+        nitrogen --restore &
     fi
 
     sleep 1
