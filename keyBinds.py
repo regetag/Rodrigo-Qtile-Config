@@ -15,16 +15,16 @@ def set_key_binds(home, mod, mod1, mod2):
         Key([mod], "Escape", lazy.spawn('xkill')),
         Key([mod], "Return", lazy.spawn('alacritty')),
         Key([mod], "KP_Enter", lazy.spawn('alacritty')),
-        Key([mod], "x", lazy.spawn("arcolinux-logout")),
+        Key([mod], "x", lazy.spawn("archlinux-logout")),
 
     # SUPER + SHIFT KEYS
 
         Key([mod, "shift"], "Return", lazy.spawn('thunar')),
-        Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#191919' -nf '#ff3b3b' -sb '#ff3b3b' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
+        Key([mod, "shift"], "d", lazy.spawn("rofi -show drun")),
         Key([mod, "shift"], "q", lazy.window.kill()),
         Key([mod, "shift"], "r", lazy.restart()),
         Key([mod, "control"], "r", lazy.restart()),
-        Key([mod, "shift"], "x", lazy.spawn("arcolinux-logout")),
+        Key([mod, "shift"], "x", lazy.spawn("archlinux-logout")),
         
 
     # CONTROL + ALT KEYS
