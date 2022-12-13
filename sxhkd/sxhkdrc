@@ -248,22 +248,6 @@ alt + p
 alt + f
     variety -f
 
-#Wallpaper previous
-alt + Left
-    variety -p
-
-#Wallpaper next
-alt + Right
-    variety -n
-
-#Wallpaper toggle-pause
-alt + Up
-    variety --toggle-pause
-
-#Wallpaper resume
-alt + Down
-    variety --resume
-
 #Xfce4-appfinder
 alt + F2
     xfce4-appfinder --collapsed
@@ -272,6 +256,14 @@ alt + F2
 alt + F3
     xfce4-appfinder
 
+super + alt + Left
+    /home/bunny/.local/bin/spotifycli --prev
+
+super + alt + Right
+    /home/bunny/.local/bin/spotifycli --next
+
+super + alt + Up
+    /home/bunny/.local/bin/spotifycli --playpause
 
 #################################################################
 #VARIETY KEYS WITH PYWAL
