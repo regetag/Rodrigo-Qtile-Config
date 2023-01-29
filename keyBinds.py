@@ -23,9 +23,11 @@ def set_key_binds(home, mod, mod1, mod2):
         Key([mod, "shift"], "d", lazy.spawn("rofi -show drun")),
         Key([mod, "shift"], "q", lazy.window.kill()),
         Key([mod, "shift"], "r", lazy.restart()),
-        Key([mod, "control"], "r", lazy.restart()),
         Key([mod, "shift"], "x", lazy.spawn("archlinux-logout")),
-        
+
+    # SUPER + CONTROL KEYS
+        Key([mod, "mod1", "control"], "h", lazy.prev_screen()),
+        Key([mod, "mod1", "control"], "l", lazy.next_screen()),
 
     # CONTROL + ALT KEYS
 
@@ -129,7 +131,7 @@ def set_key_binds(home, mod, mod1, mod2):
         Key([mod, "mod1"], "k", lazy.layout.flip_up()),
         Key([mod, "mod1"], "j", lazy.layout.flip_down()),
         Key([mod, "mod1"], "l", lazy.layout.flip_right()),
-        Key([mod, "mod1"], "h", lazy.layout.flip_left()),
+        # Key([mod, "mod1"], "h", lazy.layout.flip_left()),
 
     # MOVE WINDOWS UP OR DOWN BSP LAYOUT
         Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
